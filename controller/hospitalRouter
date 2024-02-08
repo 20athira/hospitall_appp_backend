@@ -1,0 +1,16 @@
+const express=require("express")
+const hospitalmodel=require("../model/hospitalmodel")
+const router=express.Router()
+
+
+router.post("/add",async(req,res)=>{
+    let data=req.body                //read data
+    let hospital=new hospitalmodel(data)
+    let result=await hospital.save()
+    res.json({
+        status:"sucess"
+    })
+    //res.send("ad")
+})
+
+module.exports=router
