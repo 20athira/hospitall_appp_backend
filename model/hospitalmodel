@@ -1,0 +1,13 @@
+const mongoose=require("mongoose")
+
+//creating structure
+const hospitalschema=new mongoose.Schema(
+        {
+            hospitalname:String,
+            hospitalplace:String,
+            hospitaldescription:String,
+            hospitalphone:String,
+        
+        }
+)
+module.exports=mongoose.model("hospital",hospitalschema)
